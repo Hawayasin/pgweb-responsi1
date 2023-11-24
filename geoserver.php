@@ -203,7 +203,7 @@
       L.Control.Legend = L.Control.extend({
         onAdd: function (map) {
           var img = L.DomUtil.create("img");
-          img.src = "assets/img/legend/legend1.jpg";
+          img.src = "assets/img/legend/legend1.png";
           img.style.width = "250px";
           return img;
         },
