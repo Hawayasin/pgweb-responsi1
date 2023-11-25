@@ -125,10 +125,10 @@
           // Adjust the popup content based on your polygon properties
           var content =
             "Jenis Formasi: " +
-            feature.properties.kecamatan +
+            feature.properties.name +
             "<br>" +
             "Sedimentasi: " +
-            feature.properties.jumlah +
+            feature.properties.class_lith +
             "<br>";
 
           layer.bindPopup(content);
@@ -384,56 +384,47 @@
       map.addLayer(markers);
       //Function to determine the color based on the 'value' attribute
       function getColor(value) {
-  return value =  'Aluvial'
-    ? "#FFD700"    // 
-    : value = 'Andesit'
-    ? "#DAA520 "  // 
-    : value = 'Batuan Gunungapi Tak Terpisahkan'
-    ? "#D2691E" // 
-    : value = 'Endapan Gunungapi Merapi Tua'
-    ? "#8FBC8F" // 
-    : value = 'Endapan Gunungapi Muda Merapi'
-    ? "#483D8B 	" // 
-    : value = 'Endapan Gunungapi Muda Merapi'
-    ? "#CD5C5C" // 
-    : value = 'Endapan Longsoran (Ladu) dari Awan Panas'
-    ? "#F0E68C 	" // 
-    : value = 'Formasi Jonggrangan'
-    ? "#ADD8E6 	" // 
-    : value = 'Formasi Kebobutak'
-    ? "#E0FFFF 	" // 
-    : value = 'Formasi Kepek'
-    ? "#66CDAA 	" // 
-    : value = 'Formasi Nanggulan'
-    ? "#FAFAD2" // 
-    : value = 'Formasi Oyo'
-    ? "#778899 	" // 
-    : value = 'Formasi Sambipitu'
-    ? "#800000 	" // 
-    : value = 'Formasi Semilir'
-    ? "#D2691E 	" // 
-    : value = 'Formasi Sentolo'
-    ? "#D2691E 	" // 
-    : value = 'Formasi Wonosari'
-    ? "#9370DB 	" //
-    : value = 'Formasi Wungkai'
-    ? "#D2691E 	" // 
-    : value = 'Formasi Wuni'
-    ? "#D2691E 	" //  
-    : value = 'Kulovial'
-    ? "#D2691E 	" //
-    : value = 'Nglanggran Formation'
-    ? "#D2691E 	" //  
-    : "#fff5f0"; // Warna default jika nilai kurang dari atau sama dengan 10
-}
-// function getColor(value) {
-//   return value < 50000
-//     ? "#67000d"  
-//     : (value >= 50000 && value <= 75000)
-//     ? "#fb7050"  // Warna merah muda untuk nilai di antara 50000 dan 75000
-//     : (value > 75000)
-//     ? "#ff0000"  // Warna merah untuk nilai di atas 75000
-//     : "#fff5f0"; // Warna default jika nilai kurang dari atau sama dengan 10
+      return value === 'Aluvial'
+        ? "#D2691E"    // Gold
+        : value === 'Andesit'
+        ? "#D2691E"    // Goldenrod
+        : value === 'Batuan Gunungapi Tak Terpisahkan'
+        ? " #DAA520"    // Chocolate
+        : value === 'Endapan Gunungapi Merapi Tua'
+        ? "#8FBC8F"    // Dark Sea Green
+        : value === 'Endapan Gunungapi Muda Merapi'
+        ? "#483D8B"    // Dark Slate Blue
+        : value === 'Endapan Longsoran (Ladu) dari Awan Panas'
+        ? "#F0E68C"    // Khaki
+        : value === 'Formasi Jonggrangan'
+        ? "#ADD8E6"    // Light Blue
+        : value === 'Formasi Kebobutak'
+        ? "#BA66FF"    // Light Cyan
+        : value === 'Formasi Kepek'
+        ? "#9370DB"    // Medium Aquamarine
+        : value === 'Formasi Nanggulan'
+        ? "#FAFAD2"    // Light Goldenrod Yellow
+        : value === 'Formasi Oyo'
+        ? "#FF66AA"    // Pink
+        : value === 'Formasi Sambipitu'
+        ? "#F7FF66"    // Yellow
+        : value === 'Formasi Semilir'
+        ? "#66FF6D "    // 
+        : value === 'Formasi Sentolo'
+        ? "#B581C4"    // Cobalt Blue
+        : value === 'Formasi Wonosari'
+        ? "#66CDAA "    // Medium Purple
+        : value === 'Formasi Wungkai'
+        ? "#F4511E"    // 
+        : value === 'Formasi Wuni'
+        ? "#C14242"    // 
+        : value === 'Kulovial'
+        ? "#6D6464"    // 
+        : value === 'Nglanggran Formation'
+        ? "#66FFBA"    // Chocolate
+        : "#fff5f0";   // Lavender Blush
+    }
+
 // }
     </script>
  </body>
